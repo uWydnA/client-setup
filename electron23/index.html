@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <iframe
+      src="https://anyshare.aishu.cn"
+      style="width: 100%; height: 500px"
+    ></iframe>
+  </body>
+  <script>
+    const iframe = document.querySelector("iframe");
+    console.log("iframe", iframe);
+    console.log("body", iframe.contentWindow.document.body.innerHTML);
+    iframe.onload = () => {
+      console.log("onload");
+    };
+    iframe.onerror = () => {
+      console.log("onerror");
+    };
+    iframe.oncancel = () => {
+      console.log("oncancel");
+    };
+    iframe.onclose = () => {
+      console.log("onclose");
+    };
+    iframe.onwaiting = () => {
+      console.log("onwaiting");
+    };
+    iframe.onsuspend = () => {
+      console.log("onsuspend");
+    };
+  </script>
+</html>
